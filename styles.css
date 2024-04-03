@@ -138,3 +138,16 @@ nav a:hover::before {
     margin-bottom: 20px; /* Adjust the value as needed */
     text-align: justify;
 }
+
+.teaching_exp {
+  margin-top: 20px; /* Adjust as needed to create space below the background image */
+  padding-left: 450px; /* This should be at least equal to the width of the profile image */
+  /* margin-right: 160px; */
+  font-size: 20px
+}
+
+.teaching_exp p {
+  padding-left: 100px;
+  margin-bottom: 20px; /* Adjust the value as needed */
+  text-align: justify;
+}
