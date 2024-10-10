@@ -2,7 +2,7 @@
 body {
 	margin: 0;
 	background: white;
-	font-family: "Gill Sans", sans-serif;
+	font-family: "Garamond", Serif;
 	/* font-family: "Georgia", sans-serif; */
 	/*font-weight: 800;*/
 }
@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background: #7a3405;
+  background: #af0101;
   height: 8vh;
 }
 
@@ -21,6 +21,31 @@ header::after {
   content: '';
   display: table;
   clear: both;
+}
+
+nav1 {
+  float: left;
+}
+
+nav1 ul {
+  margin: 0;
+  margin-left: -86px;
+  padding: 0;
+  list-style: none;
+}
+
+nav1 li {
+  display: inline-block;
+  margin-left: 0px;
+  padding-top: 15px;
+
+  position: relative;
+
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-family: "Lato", sans-serif;
 }
 
 nav {
@@ -35,7 +60,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-left: 70px;
+  margin-left: 40px;
   padding-top: 23px;
 
   position: relative;
@@ -46,6 +71,7 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
+  font-family: "Lato", sans-serif;
 }
 
 nav a:hover {
@@ -55,8 +81,9 @@ nav a:hover {
 nav a::before {
   content: '';
   display: block;
-  height: 5px;
-  background-color: #444;
+  height: 6px;
+  background-color: black;
+  /* background-color: #444; */
 
   position: absolute;
   top: 0;
@@ -75,33 +102,59 @@ nav a:hover::before {
 }
 
 .background {
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    /* height: auto; */
     display: block;
     width: 100%; /* Adjust as needed */
-    height: 100%; /* Keeps the aspect ratio of the image */
+    /* height: 100%; Keeps the aspect ratio of the image */
 }
 
 .profile {
     position: absolute;
     top: 60px;
-    left: 60px;
+    left: 100px;
     /*width: 50%; /* Adjust the size as needed */
     z-index: 1;
 }
 
 .text-block {
     position: absolute;
-    top: 100px;
-    right: 500px;
+    top: 590px;
+    left: 145px;
     z-index: 2; /* Ensure text block is above the background image */
     /*background: rgba(255, 255, 255, 0.5); /* Optional: for better readability */
     /*padding: 20px;*/
-    color: white;
+    color: black;
+    font-size: 22px;
 }
 
 .text-block h1 {
-    font-size: 70px;
+  font-size: 70px;
+}
+
+.sub_tab_img_container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Title Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 42px;
+}
+
+.centered_blk_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 42px;
 }
 
 /*.img_container img {
@@ -128,10 +181,10 @@ nav a:hover::before {
 }*/
 
 .bio {
-    margin-top: 20px; /* Adjust as needed to create space below the background image */
-    padding-left: 480px; /* This should be at least equal to the width of the profile image */
+    margin-top: 60px; /* Adjust as needed to create space below the background image */
+    padding-left: 560px; /* This should be at least equal to the width of the profile image */
     margin-right: 160px;
-    font-size: 20px
+    font-size: 24px
 }
 
 .bio p {
@@ -141,13 +194,24 @@ nav a:hover::before {
 
 .teaching_exp {
   margin-top: 20px; /* Adjust as needed to create space below the background image */
-  padding-left: 450px; /* This should be at least equal to the width of the profile image */
+  padding-left: 320px; /* This should be at least equal to the width of the profile image */
   /* margin-right: 160px; */
-  font-size: 20px
+  font-size: 24px
 }
 
 .teaching_exp p {
-  padding-left: 100px;
-  margin-bottom: 20px; /* Adjust the value as needed */
+  margin-top: 50px;
+  padding-left: 80px;
+  margin-bottom: 5px; /* Adjust the value as needed */
   text-align: justify;
+  margin-right: 200px;
+}
+
+.pulication_exp {
+  margin-top: 50px; /* Adjust as needed to create space below the background image */
+  /* padding-left: 50px; This should be at least equal to the width of the profile image */
+  margin-right: 250px;
+  margin-left: 250px;
+  margin-bottom: 100px;
+  font-size: 24px
 }
