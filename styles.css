@@ -1,217 +1,216 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-body {
-	margin: 0;
-	background: white;
-	font-family: "Garamond", Serif;
-	/* font-family: "Georgia", sans-serif; */
-	/*font-weight: 800;*/
+/* ---------------------------------------------------------
+   Lewis Wang — editorial / minimal stylesheet (v2)
+   --------------------------------------------------------- */
+
+:root {
+  --bg:        #faf8f4;
+  --ink:       #1a1a1a;
+  --muted:     #6b6b6b;
+  --rule:      #e3ddd1;
+  --accent:    #6b1d1d;        /* oxblood */
+  --accent-h:  #8a2828;        /* lighter oxblood for hover */
+
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --measure: 880px;            /* total content width */
 }
 
-.container {
-	width: 80%;
-	margin: 0 auto;
-}
+* { box-sizing: border-box; }
 
-header {
-  background: #af0101;
-  height: 8vh;
-}
-
-header::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-nav1 {
-  float: left;
-}
-
-nav1 ul {
-  margin: 0;
-  margin-left: -86px;
-  padding: 0;
-  list-style: none;
-}
-
-nav1 li {
-  display: inline-block;
-  margin-left: 0px;
-  padding-top: 15px;
-
-  position: relative;
-
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 28px;
-  font-family: "Lato", sans-serif;
-}
-
-nav {
-  float: right;
-}
-
-nav ul {
+html, body {
   margin: 0;
   padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.5rem 2rem 0;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.45rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.site-nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0 0 1.25rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-nav li {
-  display: inline-block;
-  margin-left: 40px;
-  padding-top: 23px;
-
-  position: relative;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
+.site-nav a {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-size: 14px;
-  font-family: "Lato", sans-serif;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-nav a:hover {
-  color: #000;
+.site-nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
-nav a::before {
-  content: '';
-  display: block;
-  height: 6px;
-  background-color: black;
-  /* background-color: #444; */
-
-  position: absolute;
-  top: 0;
-  width: 0%;
-
-  transition: all ease-in-out 250ms;
+.site-nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
 }
 
-nav a:hover::before {
+/* ---------- Main content ---------- */
+
+.content {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ---------- Sidebar (photo + contact) ---------- */
+
+.sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.profile {
   width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(8%);
+  border: 1px solid var(--rule);
 }
 
-.img_container {
-    position: relative;
-    max-width: 100%;
+.contact-card {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
-.background {
-    /* width: 100%; */
-    /* height: auto; */
-    display: block;
-    width: 100%; /* Adjust as needed */
-    /* height: 100%; Keeps the aspect ratio of the image */
+.contact-line {
+  margin: 0 0 0.4rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
 }
 
-.profile {
-    position: absolute;
-    top: 60px;
-    left: 100px;
-    /*width: 50%; /* Adjust the size as needed */
-    z-index: 1;
+.contact-line:last-child { margin-bottom: 0; }
+
+.contact-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+  min-width: 3.5rem;
 }
 
-.text-block {
-    position: absolute;
-    top: 590px;
-    left: 145px;
-    z-index: 2; /* Ensure text block is above the background image */
-    /*background: rgba(255, 255, 255, 0.5); /* Optional: for better readability */
-    /*padding: 20px;*/
-    color: black;
-    font-size: 22px;
+.email {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
-.text-block h1 {
-  font-size: 70px;
+.email .at {
+  color: var(--muted);
+  font-style: italic;
 }
 
-.sub_tab_img_container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-/* Title Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 42px;
-}
-
-.centered_blk_text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-  font-size: 42px;
-}
-
-/*.img_container img {
-/*    display: block;
-/*    width: 100%; /* Adjust as needed */
-/*    height: 100%; /* Keeps the aspect ratio of the image */
-/*    margin-bottom: 0px; /* Space between the image and the title */
-/*    position: relative;
-/*    top: 0;
-/*    left: 0;
-/*}*/
-
-/*.img_container text-block{
-  position: absolute;
-}
-
-.background {
-  position: relative;
-}
-.profile {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}*/
-
-.bio {
-    margin-top: 60px; /* Adjust as needed to create space below the background image */
-    padding-left: 560px; /* This should be at least equal to the width of the profile image */
-    margin-right: 160px;
-    font-size: 24px
-}
+/* ---------- Bio ---------- */
 
 .bio p {
-    margin-bottom: 20px; /* Adjust the value as needed */
-    text-align: justify;
+  margin: 0 0 1.1rem 0;
 }
 
-.teaching_exp {
-  margin-top: 20px; /* Adjust as needed to create space below the background image */
-  padding-left: 320px; /* This should be at least equal to the width of the profile image */
-  /* margin-right: 160px; */
-  font-size: 24px
+.bio p:first-child { margin-top: 0; }
+.bio p:last-child  { margin-bottom: 0; }
+
+/* ---------- Links (in body text) ---------- */
+
+.bio a,
+.contact-card a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(107, 29, 29, 0.25);
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.teaching_exp p {
-  margin-top: 50px;
-  padding-left: 80px;
-  margin-bottom: 5px; /* Adjust the value as needed */
-  text-align: justify;
-  margin-right: 200px;
+.bio a:hover,
+.contact-card a:hover {
+  color: var(--accent-h);
+  border-bottom-color: var(--accent-h);
 }
 
-.pulication_exp {
-  margin-top: 50px; /* Adjust as needed to create space below the background image */
-  /* padding-left: 50px; This should be at least equal to the width of the profile image */
-  margin-right: 250px;
-  margin-left: 250px;
-  margin-bottom: 100px;
-  font-size: 24px
+/* ---------- Mobile ---------- */
+
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+
+  .site-header { padding: 2.25rem 1.5rem 0; }
+  .content { padding: 2rem 1.5rem 3rem; }
+
+  .site-nav ul { gap: 1rem 1.25rem; }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .contact-card {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    grid-template-columns: 1fr;
+  }
+  .profile { max-width: 220px; }
+  .contact-card {
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+  }
 }
