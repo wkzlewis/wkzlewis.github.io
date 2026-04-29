@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------
-   Lewis Wang — editorial / minimal stylesheet (v2)
+   Lewis Wang — editorial / minimal stylesheet
    --------------------------------------------------------- */
 
 :root {
@@ -13,7 +13,7 @@
   --serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
   --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --measure: 880px;            /* total content width */
+  --measure: 880px;            /* total content width — used by header AND content for alignment */
 }
 
 * { box-sizing: border-box; }
@@ -42,7 +42,7 @@ html, body {
 .wordmark {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   letter-spacing: 0.01em;
   color: var(--ink);
   margin-bottom: 1.25rem;
@@ -174,7 +174,7 @@ html, body {
   border-bottom-color: var(--accent-h);
 }
 
-/* ---------- Mobile ---------- */
+/* ---------- Mobile (homepage) ---------- */
 
 @media (max-width: 720px) {
   body { font-size: 17px; }
@@ -213,4 +213,310 @@ html, body {
     padding-top: 1rem;
     border-top: 1px solid var(--rule);
   }
+}
+
+/* =========================================================
+   Research page (and other content pages)
+   ========================================================= */
+
+/* ---------- Page heading ---------- */
+
+.page-head {
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.page-head--tight {
+  margin-bottom: 1.75rem;
+}
+
+.page-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.45rem;            /* matches wordmark */
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin: 0 0 0.85rem 0;
+}
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;                  /* matches site-nav gap for alignment */
+}
+
+.section-nav a {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.section-nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Research sections ---------- */
+
+.research-section {
+  margin-bottom: 0;
+  scroll-margin-top: 2rem;
+}
+
+/* ---------- Section dividers (image between sections) ---------- */
+
+.section-divider {
+  margin: 3.5rem 0;
+  position: relative;
+}
+
+.section-divider img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid var(--rule);
+  filter: grayscale(8%);
+}
+
+.section-divider--bottom img {
+  object-position: center bottom;
+}
+
+/* ---------- Section titles ---------- */
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0 0 1.5rem 0;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.subsection-title {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 2.25rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.subsection-title:first-of-type {
+  margin-top: 0;
+}
+
+/* ---------- Works list (publications, etc.) ---------- */
+
+.works-list {
+  list-style: none;
+  counter-reset: works;
+  padding: 0;
+  margin: 0;
+}
+
+.works-list li {
+  counter-increment: works;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.55;
+}
+
+.works-list li::before {
+  content: counter(works) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.work-title {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.work-meta {
+  color: var(--muted);
+}
+
+/* Inline tag like "draft available upon request" */
+.tag-inline {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  vertical-align: 1px;
+}
+
+/* Linked tag like [PhilArchive] */
+a.tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid rgba(107, 29, 29, 0.3);
+  border-radius: 2px;
+  text-decoration: none;
+  vertical-align: 1px;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+a.tag:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* ---------- Dissertation styling ---------- */
+
+.diss-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+#dissertation p {
+  margin: 0 0 1.1rem 0;
+  text-align: justify;
+  hyphens: auto;
+}
+
+#dissertation p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Generic links inside research content ---------- */
+
+.research-section a:not(.tag) {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(107, 29, 29, 0.25);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.research-section a:not(.tag):hover {
+  color: var(--accent-h);
+  border-bottom-color: var(--accent-h);
+}
+
+/* ---------- Mobile for research ---------- */
+
+@media (max-width: 720px) {
+  .section-divider {
+    margin: 2.5rem 0;
+  }
+
+  .section-divider img {
+    height: 100px;
+  }
+
+  .section-title { font-size: 1.4rem; }
+
+  #dissertation p {
+    text-align: left;
+    hyphens: manual;
+  }
+}
+
+/* =========================================================
+   CV page
+   ========================================================= */
+
+.content--cv {
+  max-width: 1200px;
+  padding-top: 1.5rem;
+}
+
+.cv-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.cv-download {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(107, 29, 29, 0.3);
+  border-radius: 2px;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.cv-download:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.cv-viewer {
+  width: 100%;
+  height: 85vh;
+  border: 1px solid var(--rule);
+  background: #fff;
+  overflow: hidden;
+}
+
+.cv-viewer object {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.cv-fallback {
+  padding: 2rem;
+  font-family: var(--serif);
+  color: var(--muted);
+  text-align: center;
+}
+
+.cv-fallback a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(107, 29, 29, 0.25);
+}
+
+@media (max-width: 720px) {
+  .content--cv { padding: 1.5rem 1rem 3rem; }
+  .cv-viewer { height: 75vh; }
 }

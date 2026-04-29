@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta name="viewpoint" content="width=device-width,initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>CV</title>
-<link rel="stylesheet" href="styles.css">
-<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-
-<header>
-    <div class="container">
-      <nav1>
-        <ul>
-          <li>
-            <b>Lewis (Kuizhi) Wang</b>
-          </li>
-        </ul>
-      </nav1>
-
-      <nav>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <!-- <li><a href="research.html">Research</a></li> -->
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="work_in_progress.html">Work in Progress</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="translation.html">Translation</a></li>
-          <li><a href="cv.html">CV</a></li>
-        </ul>
-      </nav>
-    </div>
-</header>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CV — Lewis Wang</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
 <body>
-    <object
-        type="application/pdf"
-        data="cv_file/CV.pdf"
-        width="1470"
-        height="800"
-    ></object>
-    <!-- <iframe src="path/to/your/file.pdf" width="600" height="400"></iframe> -->
+  <header class="site-header">
+    <div class="wordmark">Lewis (Kuizhi) Wang</div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="translation.html">Translation</a></li>
+        <li><a href="cv.html" class="active">CV</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main class="content content--cv">
+    <div class="cv-toolbar">
+      <a href="cv_file/CV.pdf" download class="cv-download">Download PDF</a>
+    </div>
+
+    <div class="cv-viewer">
+      <object type="application/pdf" data="cv_file/CV.pdf" aria-label="Curriculum Vitae">
+        <p class="cv-fallback">
+          Your browser doesn't support inline PDF viewing.
+          <a href="cv_file/CV.pdf">Download the CV here</a>.
+        </p>
+      </object>
+    </div>
+  </main>
 </body>
 </html>
