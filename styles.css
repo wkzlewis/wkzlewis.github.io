@@ -292,6 +292,10 @@ html, body {
   object-position: center bottom;
 }
 
+.section-divider--lower img {
+  object-position: center 70%;
+}
+
 /* ---------- Section titles ---------- */
 
 .section-title {
@@ -519,4 +523,75 @@ a.tag:hover {
 @media (max-width: 720px) {
   .content--cv { padding: 1.5rem 1rem 3rem; }
   .cv-viewer { height: 75vh; }
+}
+/* =========================================================
+   Teaching page
+   ========================================================= */
+
+.teaching-section {
+  margin-bottom: 2.5rem;
+}
+
+.teaching-section:last-child {
+  margin-bottom: 0;
+}
+
+.ta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ta-list li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.5;
+}
+
+.ta-list li:last-child {
+  border-bottom: none;
+}
+
+.ta-term {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex: 0 0 7.5rem;
+  padding-top: 0.15rem;
+}
+
+/* ---------- Tailpiece (closing image at bottom of page) ---------- */
+
+.tailpiece {
+  margin: 4rem auto 0;
+  max-width: 420px;
+}
+
+.tailpiece img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+  filter: grayscale(8%);
+}
+
+.tailpiece figcaption {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .tailpiece {
+    margin-top: 2.5rem;
+    max-width: 320px;
+  }
+  .ta-list li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .ta-term { flex: 0 0 auto; }
 }
